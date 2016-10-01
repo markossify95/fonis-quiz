@@ -1,0 +1,48 @@
+<html lang="en" ng-app="app" >
+    <head>
+        <base href="/">
+        <meta charset="utf-8">
+        <title>{{title}}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="">
+        <meta name="robots" content="">
+        
+    </head>
+    <body>
+        <!--<a href="#/home">Home!</a>
+        <hr>
+        <a href="#/signup/">SignUp!</a>-->
+    
+        <div ng-view></div>
+
+    <!-- TEST VARIJANTA -->
+
+        {% load static %}
+        <script src="{% static 'kviz/bower_components/jquery/dist/jquery.js' %}"></script>
+        <script src="{% static 'kviz/bower_components/bootstrap/dist/js/bootstrap.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'kviz/bower_components/bootstrap/dist/css/bootstrap.css' %}"/>
+
+        <!--Scripts-->
+        <script src="{% static 'kviz/bower_components/angular/angular.js' %}"></script>
+        <script src="{% static 'kviz/bower_components/angular-route/angular-route.js' %}"></script>
+        <script src="{% static 'kviz/bower_components/angular-animate/angular-animate.js' %}"></script>
+
+        <!--App-->
+        <script src="{% static 'kviz/js/app.js' %}"></script>
+        <script src="{% static 'kviz/js/route.js' %}"></script>
+
+
+        <!--Toastr-->
+        <link rel="stylesheet" type="text/css" href="{% static 'kviz/bower_components/angular-toastr/dist/angular-toastr.css' %}" />
+        <script type="text/javascript" src="{% static 'kviz/bower_components/angular-toastr/dist/angular-toastr.tpls.js' %}"></script>
+
+        <!--Controllers-->
+        <script src="{% static 'kviz/js/controllers/home.js' %}"></script>
+        <script src="{% static 'kviz/js/controllers/quiz.js' %}"></script>
+
+        <!--Services-->
+        <script src="{% static 'kviz/js/services/quizService.js' %}"></script>
+
+    </body>
+    
+</html>
