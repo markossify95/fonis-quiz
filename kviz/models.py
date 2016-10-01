@@ -17,4 +17,4 @@ class Slave(models.Model):
     name = models.CharField(max_length=20)
     surname = models.CharField(max_length=20)
     score = models.FloatField(default=0)
-    email = models.EmailField()
+    email = models.EmailField(max_length=70, blank=True)
