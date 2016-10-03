@@ -12,6 +12,7 @@ angular.module('app', [
     //controllers
     'app.home',
     'app.quiz',
+    'app.final',
     
     
     //services

@@ -1,7 +1,21 @@
-<h1>Home</h1>
-<input type="text"  ng-model="firstName">
-<input type="text"  ng-model="lastName">
-<button ng-click="go()">klikni</button>
+<!--<h1>Home</h1>
+<input type="text" ng-model="firstName">
+<input type="text" ng-model="lastName">
+<button ng-click="go()">klikni</button>-->
 
 
-<p>{{q.pk}}</p>
+<div class="container">
+	<div class="login-container">
+            <div id="output"></div>
+            <div class="avatar"></div>
+            <div class="form-box">
+                <form >
+                    <input type="text" placeholder="ime" ng-model="firstName">
+                    <input type="text" placeholder="prezime" ng-model="lastName">
+                    <input type="text" placeholder="email" ng-model="email">
+                    <button class="btn btn-info btn-block login" ng-click="go()">Login</button>
+                </form>
+            </div>
+        </div>
+        
+</div>

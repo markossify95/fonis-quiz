@@ -9,7 +9,7 @@ from django.core import serializers
 
 class QuestionList(APIView):
     def get(self, request):
-        questions = Question.objects.all()
+        questions = Question.objects.order_by('?')[:5]
         data = serializers.serialize('json', questions)
 
         return HttpResponse(data, content_type='application/json')
@@ -19,9 +19,15 @@ class SlaveScore(APIView):
         slave = {
             'name': request.data['name'],
             'surname': request.data['surname'],
+            'email': request.data['email'],
             'score': request.data['score'],
         }
         serializer = SlaveSerializer(data=slave)
         if serializer.is_valid():
             serializer.save()
-            return HttpResponse("<h1>Pusi kurac</h1>")
+            data = {
+                'msg': 'success',
+            }
+            return HttpResponse(status=200)
+        else:
+            return HttpResponse(status=404)

@@ -7,9 +7,15 @@ angular.module('app.home', [])
 
         $routeParams.id = 0;
         $rootScope.title = 'My app';
+
+
         $rootScope.correctAnswers = 0;
+        $rootScope.counterOfQuestions = 0;
+
+
         $scope.firstName = '';
         $scope.lastName = '';
+        $scope.email = '';
         $rootScope.questions = {};
         $scope.q = {};
 
@@ -27,8 +33,9 @@ angular.module('app.home', [])
             $location.path('/quiz/' + $routeParams.id);
             $rootScope.firstName = $scope.firstName;
             $rootScope.lastName = $scope.lastName;
-            $routeParams.id = $rootScope.questions[$routeParams.id].pk;
-            //$log.info($routeParams.id);
+            $rootScope.email = $scope.email;
+
+
         };
 
 

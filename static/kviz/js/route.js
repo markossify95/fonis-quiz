@@ -1,19 +1,24 @@
-angular.module('app.route',[])
+angular.module('app.route', [])
 
-.config(['$routeProvider',function($routeProvider){
-    
-    
-   $routeProvider
+    .config(['$routeProvider', function ($routeProvider) {
 
-		.when('/home',{
-			templateUrl:'D:\\PyCharm\\quiz\\kviz\\static\\kviz\\views\\home.html',
-			controller:'HomeController'
-		})
 
-		.when('/quiz/:id',{
-			templateUrl:'D:\\PyCharm\\quiz\\kviz\\static\\kviz\\views\\quiz.html',
-			controller:'QuizController'
-		})
+        $routeProvider
 
-		.otherwise({ redirectTo: '/home' });
-}]);
+            .when('/home', {
+                templateUrl: 'static/kviz/views/home.html',
+                controller: 'HomeController'
+            })
+
+            .when('/quiz/:id', {
+                templateUrl: 'static/kviz/views/quiz.html',
+                controller: 'QuizController'
+            })
+            .when('/final', {
+                templateUrl: 'static/kviz/views/final.html',
+                controller: 'FinalController'
+            })
+            .otherwise({
+                redirectTo: '/home'
+            });
+    }]);
