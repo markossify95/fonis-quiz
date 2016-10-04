@@ -19,17 +19,20 @@ angular.module('app.home', [])
         $rootScope.questions = {};
         $scope.q = {};
 
-        function activate() {
+        function start() {
             QuizService.getQuestions().then(function (res) {
                 $rootScope.questions = res.data;
 
                 $scope.q = $rootScope.questions[0];
                 //$log.log($scope.q);
+                console.log("USPESNO start()!\n");
             });
         }
-        activate();
+        start();
 
         $scope.go = function () {
+            
+            console.log("POZVANA go()\n");
             $location.path('/quiz/' + $routeParams.id);
             $rootScope.firstName = $scope.firstName;
             $rootScope.lastName = $scope.lastName;

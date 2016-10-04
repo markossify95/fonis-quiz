@@ -21,6 +21,7 @@ angular.module('app.quiz', [])
                         } else {
                             $log.log(err);
                         }
+
                         $location.path('/final');
                     });
                 }
@@ -28,7 +29,7 @@ angular.module('app.quiz', [])
             };
             $scope.activate();
 
-            $scope.noQuestion = parseInt($routeParams.id) + 1;
+            //$scope.noQuestion = parseInt($routeParams.id) + 1;
 
 
             $scope.question = $rootScope.questions[parseInt($routeParams.id)];
@@ -40,8 +41,10 @@ angular.module('app.quiz', [])
             $scope.q4 = $scope.question.fields;
 
 
+            console.log("EVO ME ISPRED SUBMIT-A");
             $scope.submit = function () {
 
+                console.log("EVO ME U SABMITU ALEEEE!!!!");
                 if (myForm.answer.value === 'true') {
                     toastr.success('Odgovor na ' + $scope.noQuestion + '. pitanje je tacan!');
                     $routeParams.id++;
@@ -57,6 +60,7 @@ angular.module('app.quiz', [])
                 $rootScope.counterOfQuestions++;
                 $log.info($rootScope.correctAnswers + '/' + $rootScope.counterOfQuestions);
 
+                console.log("USPESAN submit()\n");
             };
 
 

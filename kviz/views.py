@@ -6,7 +6,6 @@ from django.http import HttpResponse
 from django.core import serializers
 
 
-
 class QuestionList(APIView):
     def get(self, request):
         questions = Question.objects.order_by('?')[:5]
@@ -14,20 +13,18 @@ class QuestionList(APIView):
 
         return HttpResponse(data, content_type='application/json')
 
+
 class SlaveScore(APIView):
     def post(self, request):
         slave = {
             'name': request.data['name'],
             'surname': request.data['surname'],
-            'email': request.data['email'],
             'score': request.data['score'],
+            'email': request.data['email'],
         }
         serializer = SlaveSerializer(data=slave)
         if serializer.is_valid():
             serializer.save()
-            data = {
-                'msg': 'success',
-            }
             return HttpResponse(status=200)
         else:
-            return HttpResponse(status=404)
+            return HttpResponse(status=501)

@@ -1,21 +1,22 @@
 angular.module('app.route', [])
 
-    .config(['$routeProvider', function ($routeProvider) {
+    .config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
 
+        $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
         $routeProvider
 
             .when('/home', {
-                templateUrl: 'static/kviz/views/home.html',
+                templateUrl: '/static/kviz/views/home.html',
                 controller: 'HomeController'
             })
 
             .when('/quiz/:id', {
-                templateUrl: 'static/kviz/views/quiz.html',
+                templateUrl: '/static/kviz/views/quiz.html',
                 controller: 'QuizController'
             })
             .when('/final', {
-                templateUrl: 'static/kviz/views/final.html',
+                templateUrl: '/static/kviz/views/final.html',
                 controller: 'FinalController'
             })
             .otherwise({

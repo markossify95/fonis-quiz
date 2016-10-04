@@ -6,7 +6,7 @@ angular.module('app.services.quiz', [])
 
     service.getQuestions = function () {
 
-        return $http.get('quiz/questions/all/');
+        return $http.get('/quiz/questions/all/');
 
     };
 
