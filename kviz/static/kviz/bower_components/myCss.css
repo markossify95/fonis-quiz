@@ -6,7 +6,7 @@
   border-radius: 20px;
 }
 label.btn {
-    
+
     padding: 18px 60px;
     white-space: normal;
     -webkit-transform: scale(1.0);
@@ -14,22 +14,19 @@ label.btn {
     -o-transform: scale(1.0);
     -webkit-transition-duration: .3s;
     -moz-transition-duration: .3s;
-    -o-transition-duration: .3s
+    -o-transition-duration: .3s;
 }
 
 label.btn:hover {
     text-shadow: 0 3px 2px rgba(0,0,0,0.4);
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
-    -o-transform: scale(1.1)
+    -o-transform: scale(1.1);
 }
 label.btn-block {
     text-align: left;
-    position: relative
+    position: relative;
 }
-
-
-
 
 .row>h1{
     margin-left: 20px;
@@ -213,7 +210,7 @@ html,body{
 
 .final{
     margin-top: 20px;
-    
+
     text-align: center;
     color: darkorange;
 }
