@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='slave',
+            model_name='subordinate',
             name='email',
             field=models.EmailField(blank=True, max_length=70),
         ),

@@ -14,15 +14,15 @@ class QuestionList(APIView):
         return HttpResponse(data, content_type='application/json')
 
 
-class SlaveScore(APIView):
+class SubordinateScore(APIView):
     def post(self, request):
-        slave = {
+        subordinate = {
             'name': request.data['name'],
             'surname': request.data['surname'],
             'score': request.data['score'],
             'email': request.data['email'],
         }
-        serializer = SlaveSerializer(data=slave)
+        serializer = SubordinateSerializer(data=subordinate)
         if serializer.is_valid():
             serializer.save()
             return HttpResponse(status=200)
